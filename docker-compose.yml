@@ -1,0 +1,9 @@
+version: '3'
+services:
+  mysqldb:
+    image: "mysql:${MYSQL_VERSION}"
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_USER
+      - MYSQL_PASSWORD
