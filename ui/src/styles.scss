@@ -1,4 +1,3 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
@@ -12,8 +11,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$StickerBootApp-primary: mat-palette($mat-indigo);
-$StickerBootApp-accent: mat-palette($mat-pink, A200, A100, A400);
+$StickerBootApp-primary: mat-palette($mat-green);
+$StickerBootApp-accent: mat-palette($mat-light-green, A200, A400, A700);
 
 // The warn palette is optional (defaults to red).
 $StickerBootApp-warn: mat-palette($mat-red);
@@ -28,5 +27,21 @@ $StickerBootApp-theme: mat-light-theme($StickerBootApp-primary, $StickerBootApp-
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// Import logo font
+@import url('https://fonts.googleapis.com/css?family=Satisfy&display=swap');
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+}
+
+.page-container {
+  margin: 0 auto;
+  max-width: 75rem;
+  padding: 0 1rem;
+}
+

@@ -1,0 +1,25 @@
+.stbt-logo {
+  align-items: center;
+  display: flex;
+  padding: 0.5em;
+
+  .logo {
+    background-image: url("../../../assets/images/stbt-logo-black.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    flex-shrink: 1;
+    min-height: 5rem;
+    min-width: 4rem;
+  }
+
+  &.reversed .logo {
+    background-image: url("../../../assets/images/stbt-logo-white.svg");
+  }
+
+  .text {
+    flex-grow: 3;
+    font-family: 'Satisfy', cursive;
+  }
+}
