@@ -1,0 +1,13 @@
+.banner {
+  padding: 3rem 2rem;
+  color: #FFF;
+  background: rgb(15,109,120);
+  background: linear-gradient(131deg, rgba(15,109,120,1) 0%, rgba(70,121,95,1) 25%, rgba(80,128,88,1) 49%, rgba(134,170,73,1) 79%, rgba(199,148,38,1) 100%);
+
+  h1, h2 {font-family: 'Roboto', sans-serif !important;}
+
+  h1 {
+    text-shadow: #333 0 0 5px;
+    margin-top: 1rem;
+  }
+}
