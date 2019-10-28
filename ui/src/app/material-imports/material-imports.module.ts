@@ -1,7 +1,15 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatFormFieldModule, MatGridListModule, MatInputModule} from '@angular/material/';
+import {
+  MatButtonModule,
+  MatFormFieldModule,
+  MatGridListModule,
+  MatInputModule,
+  MatToolbarModule,
+  MatIconModule,
+
+} from '@angular/material/';
 
 
 @NgModule({
@@ -14,7 +22,9 @@ import {MatButtonModule, MatFormFieldModule, MatGridListModule, MatInputModule} 
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatGridListModule
+    MatGridListModule,
+    MatToolbarModule,
+    MatIconModule
   ]
 })
 export class MaterialImportsModule {

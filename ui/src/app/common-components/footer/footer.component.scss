@@ -3,7 +3,7 @@
 footer {
   background: lighten(mat-color($mat-green, 100), 12);
   color: #333;
-  padding: 2rem 0;
+  padding: 1rem 0;
 
   .page-container {
     display: flex;
@@ -13,7 +13,7 @@ footer {
 
 .footer-branding {
   flex-shrink: 1;
-  padding: 0 1.5rem 0 0;
+  padding: 0 2rem 0 0;
 }
 
 .footer-newsletter {
@@ -28,6 +28,7 @@ footer {
     mat-form-field {
       max-width: 30rem;
       width: 100%;
+      display: block;
     }
   }
 }

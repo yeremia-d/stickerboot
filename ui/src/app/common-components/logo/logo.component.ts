@@ -16,8 +16,6 @@ export class LogoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.calcFontSize = this.height * 0.25;
+    this.calcFontSize = this.height * 0.45;
   }
-
-
 }
