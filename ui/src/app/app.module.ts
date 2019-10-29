@@ -7,6 +7,7 @@ import {CommonComponentsModule} from './common-components/common-components.modu
 import {HomeModule} from './home/home.module';
 import {CheckoutModule} from './checkout/checkout.module';
 import {CartModule} from './cart/cart.module';
+import {MarketplaceModule} from './marketplace/marketplace.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {CartModule} from './cart/cart.module';
     CommonComponentsModule,
     HomeModule,
     CheckoutModule,
-    CartModule
+    CartModule,
+    MarketplaceModule
   ],
   providers: [],
   bootstrap: [AppComponent]
