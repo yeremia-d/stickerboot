@@ -1,12 +1,10 @@
 <section class="page-section mat-typography">
   <h1>Checkout</h1>
 
-  <mat-vertical-stepper linear="true">
-    <mat-step label="Shipping Address"></mat-step>
-    <mat-step label="Billing Address"></mat-step>
-    <mat-step label="Shipping Method"></mat-step>
-    <mat-step label="Payment Method"></mat-step>
-    <mat-step label="Review and Place Order"></mat-step>
-  </mat-vertical-stepper>
+  <div class="checkout-wrapper">
+    <app-checkout-form></app-checkout-form>
+    <app-order-summary></app-order-summary>
+  </div>
+
 </section>
 
