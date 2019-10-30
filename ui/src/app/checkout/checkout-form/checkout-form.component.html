@@ -26,12 +26,19 @@
         <input matInput formControlName="shippingPostalCodeCtrl">
       </mat-form-field>
 
-      <div><button mat-raised-button color="primary" matStepperNext>Next <mat-icon>arrow_right_alt</mat-icon></button></div>
+      <div>
+        <button mat-raised-button color="primary" matStepperNext>Next
+          <mat-icon>arrow_right_alt</mat-icon>
+        </button>
+      </div>
     </form>
   </mat-step>
 
   <mat-step label="Billing Address">
     <form [formGroup]="billingAddressFormGroup" class="address-form">
+      <div style="margin-bottom: 1rem;">
+        <mat-checkbox>Use my shipping address as my billing address</mat-checkbox>
+      </div>
 
       <mat-form-field appearance="outline" class="addressField">
         <mat-label>Street Address and Appartment/Unit Number</mat-label>
@@ -56,7 +63,11 @@
         <input matInput formControlName="billingPostalCodeCtrl">
       </mat-form-field>
 
-      <div><button mat-raised-button color="primary" matStepperNext>Next <mat-icon>arrow_right_alt</mat-icon></button></div>
+      <div>
+        <button mat-raised-button color="primary" matStepperNext>Next
+          <mat-icon>arrow_right_alt</mat-icon>
+        </button>
+      </div>
     </form>
   </mat-step>
 
@@ -67,7 +78,11 @@
         {{ shipMethod.name }} - ${{shipMethod.price}}
       </mat-radio-button>
     </mat-radio-group>
-    <div><button mat-raised-button color="primary" matStepperNext>Next <mat-icon>arrow_right_alt</mat-icon></button></div>
+    <div>
+      <button mat-raised-button color="primary" matStepperNext>Next
+        <mat-icon>arrow_right_alt</mat-icon>
+      </button>
+    </div>
 
   </mat-step>
 
@@ -89,7 +104,11 @@
         <mat-label>Cardholder Name</mat-label>
         <input matInput formControlName="creditCardCardholderCtrl">
       </mat-form-field>
-      <div><button mat-raised-button color="primary" matStepperNext>Next <mat-icon>arrow_right_alt</mat-icon></button></div>
+      <div>
+        <button mat-raised-button color="primary" matStepperNext>Next
+          <mat-icon>arrow_right_alt</mat-icon>
+        </button>
+      </div>
 
     </form>
   </mat-step>
