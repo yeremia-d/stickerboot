@@ -1,0 +1,13 @@
+<section class="page-section mat-typography">
+  <h1>Welcome to the Sticker Marketplace</h1>
+
+  <mat-grid-list cols="4" rowHeight="1:1">
+    <mat-grid-tile *ngFor="let sticker of stickers">{{sticker.name}}</mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-paginator [length]="numItems"
+                 [pageSize]="pageSize"
+                 [pageSizeOptions]="pageSizeOptions">
+  </mat-paginator>
+
+</section>

@@ -1,6 +1,10 @@
 ### System ###
 .DS_Store
 
+
+.env
+
+
 ## IntelliJ ##
 .idea
 *.iml
@@ -13,3 +17,4 @@ build
 
 ## CICD ##
 ci/variables.yml
+

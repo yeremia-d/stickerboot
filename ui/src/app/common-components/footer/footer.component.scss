@@ -1,0 +1,45 @@
+@import '../../../../node_modules/@angular/material/theming';
+
+footer {
+  background: lighten(mat-color($mat-green, 100), 12);
+  color: #333;
+  padding: 1rem 0;
+
+  .page-container {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.footer-branding {
+  flex-shrink: 1;
+  padding: 0 2rem 0 0;
+}
+
+.footer-newsletter {
+  border-left: rgba(mat-color($mat-green, 900), 0.5) 1px solid;;
+  border-right: rgba(mat-color($mat-green, 900), 0.5) 1px solid;
+  flex-grow: 2;
+  padding: 1.5rem 2.5rem;
+
+  .subscribe-form-wrapper {
+    width: 100%;
+
+    mat-form-field {
+      max-width: 30rem;
+      width: 100%;
+      display: block;
+    }
+  }
+}
+
+.footer-nav {
+  flex-grow: 1;
+  padding: 1.5rem 2rem;
+
+  nav {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+  }
+}

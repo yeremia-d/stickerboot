@@ -1,0 +1,31 @@
+<footer class="mat-typography">
+  <section class="page-container">
+    <div class="footer-branding">
+      <app-stbt-logo height="8" width="7"></app-stbt-logo>
+      <small class="copyright">&copy; {{this.currentYear}} Stickerboot LLC.</small>
+    </div>
+
+    <div class="footer-newsletter">
+      <h1>Don't miss out!</h1>
+      <p>Sign up for our monthly newsletter to keep up-to-date on our latest offers and exclusive promotions!</p>
+      <div class="subscribe-form-wrapper">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email Address" type="email">
+        </mat-form-field>
+
+        <button color="primary" mat-flat-button>Subscribe</button>
+      </div>
+    </div>
+
+    <div class="footer-nav">
+      <nav>
+        <button mat-button>About Stickerboot</button>
+        <button mat-button>Sticker Marketplace</button>
+        <button mat-button>Track my order</button>
+        <button mat-button>Get support</button>
+        <button mat-button>Contact</button>
+      </nav>
+    </div>
+  </section>
+</footer>
