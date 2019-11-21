@@ -1,3 +1,15 @@
 ### System ###
 .DS_Store
+
+## IntelliJ ##
 .idea
+*.iml
+
+## Gradle ##
+.gradle
+
+## Build ##
+build
+
+## CICD ##
+ci/variables.yml
