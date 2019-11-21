@@ -1,0 +1,14 @@
+<div class="mat-typography">
+  <section class="banner">
+    <h1 class="mat-display-4">Get your message to stick.</h1>
+    <h2 class="mat-title">Create your own stickers or sell them on our marketplace and make some extra cash. <br/>Discover
+      new designs and get them on our community sticker marketplace.</h2>
+  </section>
+  <section class="page-section">
+    <h1 class="mat-headline">Featured Stickers</h1>
+    <mat-grid-list cols="4" rowHeight="1:1">
+      <mat-grid-tile *ngFor="let sticker of featuredStickers">{{sticker.name}}</mat-grid-tile>
+    </mat-grid-list>
+    <button color="primary" mat-flat-button>Visit the Sticker Marketplace</button>
+  </section>
+</div>

@@ -1,0 +1,126 @@
+<mat-vertical-stepper>
+
+  <mat-step [stepControl]="shippingAddressFormGroup" label="Shipping Address">
+    <form [formGroup]="shippingAddressFormGroup" class="address-form">
+
+      <mat-form-field appearance="outline" class="addressField">
+        <mat-label>Street Address and Appartment/Unit Number</mat-label>
+        <input formControlName="shippingStreetAddressCtrl" matInput>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline" class="cityField">
+        <mat-label>City/Town</mat-label>
+        <input formControlName="shippingCityCtrl" matInput>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="provinceField">
+        <mat-label>Province/Territory</mat-label>
+        <mat-select formControlName="shippingProvinceCtrl">
+          <mat-option *ngFor="let province of provinces" [value]="province.abbrv">{{province.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Postal Code</mat-label>
+        <input formControlName="shippingPostalCodeCtrl" matInput>
+      </mat-form-field>
+
+      <div>
+        <button color="primary" mat-raised-button matStepperNext>Next
+          <mat-icon>arrow_right_alt</mat-icon>
+        </button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step label="Billing Address">
+    <form [formGroup]="billingAddressFormGroup" class="address-form">
+      <div style="margin-bottom: 1rem;">
+        <mat-checkbox>Use my shipping address as my billing address</mat-checkbox>
+      </div>
+
+      <mat-form-field appearance="outline" class="addressField">
+        <mat-label>Street Address and Appartment/Unit Number</mat-label>
+        <input formControlName="billingStreetAddressCtrl" matInput>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline" class="cityField">
+        <mat-label>City/Town</mat-label>
+        <input formControlName="billingCityCtrl" matInput>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="provinceField">
+        <mat-label>Province/Territory</mat-label>
+        <mat-select formControlName="billingProvinceCtrl">
+          <mat-option *ngFor="let province of provinces" [value]="province.abbrv">{{province.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Postal Code</mat-label>
+        <input formControlName="billingPostalCodeCtrl" matInput>
+      </mat-form-field>
+
+      <div>
+        <button color="primary" mat-raised-button matStepperNext>Next
+          <mat-icon>arrow_right_alt</mat-icon>
+        </button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step label="Shipping Method">
+    <label id="shippingMethodLabel">Select your shipping method</label>
+    <mat-radio-group aria-labelledby="shippingMethodLabel">
+      <mat-radio-button *ngFor="let shipMethod of shippingMethods" [value]="shipMethod.code" class="shippingOption">
+        {{ shipMethod.name }} - ${{shipMethod.price}}
+      </mat-radio-button>
+    </mat-radio-group>
+    <div>
+      <button color="primary" mat-raised-button matStepperNext>Next
+        <mat-icon>arrow_right_alt</mat-icon>
+      </button>
+    </div>
+
+  </mat-step>
+
+  <mat-step [stepControl]="paymentFormGroup" label="Payment Method">
+    <form [formGroup]="paymentFormGroup" class="creditCard-form">
+      <mat-form-field appearance="outline" class="cardNumber">
+        <mat-label>Credit Card Number</mat-label>
+        <input formControlName="creditCardNumberCtrl" matInput>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="expiryDate">
+        <mat-label>Expiry Date</mat-label>
+        <input formControlName="creditCardExpiryDateCtrl" matInput placeholder="MM/YY">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="cvvNumber">
+        <mat-label>CVV</mat-label>
+        <input formControlName="creditCardCvvCtrl" matInput>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="cardholderName">
+        <mat-label>Cardholder Name</mat-label>
+        <input formControlName="creditCardCardholderCtrl" matInput>
+      </mat-form-field>
+      <div>
+        <button color="primary" mat-raised-button matStepperNext>Next
+          <mat-icon>arrow_right_alt</mat-icon>
+        </button>
+      </div>
+
+    </form>
+  </mat-step>
+
+  <mat-step label="Review and Place Order">
+    <mat-checkbox>
+      By placing my order, I hereby agree to the terms and conditions of sale including the returns and
+      refund policy.
+    </mat-checkbox>
+    <div>
+      <button color="primary" mat-raised-button>Place Order</button>
+    </div>
+  </mat-step>
+
+</mat-vertical-stepper>
