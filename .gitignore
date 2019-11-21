@@ -1,5 +1,15 @@
-# Ignore Gradle project-specific cache directory
+### System ###
+.DS_Store
+
+## IntelliJ ##
+.idea
+*.iml
+
+## Gradle ##
 .gradle
 
-# Ignore Gradle build output directory
+## Build ##
 build
+
+## CICD ##
+ci/variables.yml
