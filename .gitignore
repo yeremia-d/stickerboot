@@ -1,5 +1,20 @@
 ### System ###
 .DS_Store
 
+
 .env
-!.env-template
+
+
+## IntelliJ ##
+.idea
+*.iml
+
+## Gradle ##
+.gradle
+
+## Build ##
+build
+
+## CICD ##
+ci/variables.yml
+
