@@ -1,1 +1,3 @@
 include 'applications:catalog-server'
+
+include 'components:catalog'
