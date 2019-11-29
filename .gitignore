@@ -1,9 +1,6 @@
 ### System ###
 .DS_Store
-
-
 .env
-
 
 ## IntelliJ ##
 .idea
@@ -12,7 +9,7 @@
 ## Gradle ##
 .gradle
 
-## Build ##
+## Builds ##
 build
 
 ## CICD ##
