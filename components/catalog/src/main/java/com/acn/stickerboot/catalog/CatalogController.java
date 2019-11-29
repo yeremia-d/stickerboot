@@ -11,28 +11,34 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/catalog")
 public class CatalogController {
 
+    private final CatalogService catalogService;
+
+    CatalogController(CatalogService catalogService) {
+        this.catalogService = catalogService;
+    }
+
     @GetMapping
     public Page<Item> list(@RequestParam(required = false) Pageable page) {
-        return null;
+        return catalogService.listItems(page);
     }
 
     @GetMapping("/{id}")
-    public Item getById(Long id) {
-        return null;
+    public Item getById(@PathVariable Long id) {
+        return catalogService.getItemById(id);
     }
 
     @PostMapping
-    public Item create(Item item) {
-        return null;
+    public Item create(@RequestBody Item item) {
+        return catalogService.createItem(item);
     }
 
     @PutMapping
-    public Item update(Item item) {
-        return null;
+    public Item update(@RequestBody Item item) {
+        return catalogService.updateItem(item);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(Long id) {
-
+    public void delete(@PathVariable Long id) {
+        catalogService.deleteById(id);
     }
 }

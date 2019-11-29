@@ -10,7 +10,7 @@ public interface CatalogService {
 
     Page<Item> listItems(Pageable pageable);
 
-    Item addItem(Item item);
+    Item createItem(Item item);
 
     Item updateItem(Item item);
 

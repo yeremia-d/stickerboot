@@ -31,7 +31,7 @@ public class CatalogServiceImpl implements CatalogService {
     }
 
     @Override
-    public Item addItem(Item item) {
+    public Item createItem(Item item) {
         return catalogRepository.save(item);
     }
 
