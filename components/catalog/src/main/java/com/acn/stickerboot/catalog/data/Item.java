@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 @Data
@@ -19,15 +19,14 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @NotNull(message = "Item name cannot be blank")
+    @NotEmpty
     String name;
 
     String description;
 
-    @NotNull(message = "basePrice cannot be blank")
+    @NotEmpty
     float basePrice;
 
     @OneToMany(orphanRemoval = true)
     List<ItemVariation> variations;
-
 }
