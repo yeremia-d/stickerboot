@@ -1,5 +1,5 @@
 apply from: "$rootDir/applications/server.gradle"
 
 dependencies {
-    implementation project(':components:catalog')
+    implementation project(':components:inventory')
 }
