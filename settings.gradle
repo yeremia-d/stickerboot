@@ -1,3 +1,5 @@
 include 'applications:catalog-server'
+include 'applications:inventory-server'
 
 include 'components:catalog'
+include 'components:inventory'
