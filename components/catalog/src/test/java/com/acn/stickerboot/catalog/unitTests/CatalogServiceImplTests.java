@@ -25,6 +25,7 @@ import static org.mockito.Mockito.*;
 
 
 @ExtendWith(MockitoExtension.class)
+@DisplayName("Unit Tests for CatalogServiceImpl")
 public class CatalogServiceImplTests {
 
     @Mock
