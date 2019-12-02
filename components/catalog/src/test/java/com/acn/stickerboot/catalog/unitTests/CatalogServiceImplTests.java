@@ -55,8 +55,7 @@ public class CatalogServiceImplTests {
     @Test
     @DisplayName("getElementById when an item is found")
     public void getItemById__Test() {
-        when(catalogRepository.findById(testItem_1.getId()))
-                .thenReturn(Optional.of(testItem_1));
+        when(catalogRepository.findById(testItem_1.getId())).thenReturn(Optional.of(testItem_1));
 
         Item result = catalogService.getItemById(testItem_1.getId());
 
@@ -90,6 +89,7 @@ public class CatalogServiceImplTests {
     }
 
     @Test
+    @DisplayName("createItem Test")
     public void createItem__Test() {
         when(catalogRepository.save(testItem_1)).thenReturn(testItem_1);
 
@@ -100,6 +100,7 @@ public class CatalogServiceImplTests {
     }
 
     @Test
+    @DisplayName("updateItem Test")
     public void updateItem__Test() {
         when(catalogRepository.save(testItem_1)).thenReturn(testItem_1);
 
@@ -110,6 +111,7 @@ public class CatalogServiceImplTests {
     }
 
     @Test
+    @DisplayName("deleteItem Test")
     void deleteById__Test() {
         doNothing().when(catalogRepository).deleteById(testItem_1.getId());
 
