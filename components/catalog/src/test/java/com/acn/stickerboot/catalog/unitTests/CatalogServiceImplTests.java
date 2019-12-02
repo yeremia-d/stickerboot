@@ -75,7 +75,7 @@ public class CatalogServiceImplTests {
     @Test
     @DisplayName("listItems when 2 items are found")
     public void listItems__Test() {
-        Pageable testPageable = PageRequest.of(1, 1);
+        Pageable testPageable = PageRequest.of(1, 2);
         List<Item> items = Arrays.asList(testItem_1, testItem_2);
         Page<Item> itemsPage = new PageImpl<>(items, testPageable, items.size());
 
@@ -85,7 +85,7 @@ public class CatalogServiceImplTests {
 
         verify(catalogRepository).findAll(testPageable);
 
-        assertEquals(items.size(), result.getTotalElements());
+        assertEquals(items.size(), result.getNumberOfElements());
         assertIterableEquals(items, result.toList());
     }
 
@@ -96,7 +96,7 @@ public class CatalogServiceImplTests {
 
         Item result = catalogService.createItem(testItem_1);
 
-        verify(catalogRepository).save(testItem_1);
+        verify(catalogRepository, atLeastOnce()).save(testItem_1);
         assertEquals(testItem_1, result);
     }
 
@@ -107,7 +107,7 @@ public class CatalogServiceImplTests {
 
         Item result = catalogService.updateItem(testItem_1);
 
-        verify(catalogRepository).save(testItem_1);
+        verify(catalogRepository, atLeastOnce()).save(testItem_1);
         assertEquals(testItem_1, result);
     }
 
@@ -118,6 +118,6 @@ public class CatalogServiceImplTests {
 
         catalogService.deleteById(testItem_1.getId());
 
-        verify(catalogRepository).deleteById(testItem_1.getId());
+        verify(catalogRepository, times(1)).deleteById(testItem_1.getId());
     }
 }
