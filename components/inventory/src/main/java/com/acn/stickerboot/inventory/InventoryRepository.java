@@ -13,6 +13,6 @@ public interface InventoryRepository extends JpaRepository<InventoryItem, Long> 
     @Query("select item from InventoryItem item where item.catalogItemVariationId = :itemId")
     Optional<InventoryItem> getByCatalogVariationId(@Param("itemId") Long catalogVariationId);
 
-    @Query("select item from InventoryItem where item.catalogItemVariationId in :catalogVariationIds")
+    @Query("select item from InventoryItem item where item.catalogItemVariationId in :catalogVariationIds")
     List<InventoryItem> getInventoryItemsInCatalogItems(@Param("catalogVariationIds") List<Long> catalogVariationIds);
 }

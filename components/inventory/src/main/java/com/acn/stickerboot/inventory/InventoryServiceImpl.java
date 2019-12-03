@@ -10,6 +10,7 @@ import java.util.NoSuchElementException;
 
 @Service
 public class InventoryServiceImpl implements InventoryService {
+
     InventoryRepository inventoryRepository;
 
     public InventoryServiceImpl(InventoryRepository inventoryRepository) {
