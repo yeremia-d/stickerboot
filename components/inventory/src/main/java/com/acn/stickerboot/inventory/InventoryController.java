@@ -19,12 +19,12 @@ public class InventoryController {
     }
 
     @PostMapping("/add")
-    public InventoryItem addInventoryByCatalogId(@RequestParam Long catalogId, @RequestParam Integer amount) {
-        return inventoryService.addInventoryItems(catalogId, amount);
+    public InventoryItem addInventoryByCatalogId(@RequestParam Long catalogVariationId, @RequestParam Integer amount) {
+        return inventoryService.addInventoryItems(catalogVariationId, amount);
     }
 
     @PostMapping("/remove")
-    public InventoryItem removeInventoryByCatalogId(@RequestParam Long catalogId, @RequestParam Integer amount) {
-        return inventoryService.removeInventoryItems(catalogId, amount);
+    public InventoryItem removeInventoryByCatalogId(@RequestParam Long catalogVariationId, @RequestParam Integer amount) {
+        return inventoryService.removeInventoryItems(catalogVariationId, amount);
     }
 }

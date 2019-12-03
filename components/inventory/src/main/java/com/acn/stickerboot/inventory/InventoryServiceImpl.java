@@ -50,12 +50,12 @@ public class InventoryServiceImpl implements InventoryService {
     }
 
     @Override
-    public List<InventoryItem> ListInventoryItems(List<Long> id) {
-        return null;
+    public List<InventoryItem> ListInventoryItems(List<Long> idList) {
+        return inventoryRepository.getInventoryItemsInCatalogItems(idList);
     }
 
     @Override
     public void deleteInventoryItemEntryById(Long id) {
-
+        inventoryRepository.deleteById(id);
     }
 }
