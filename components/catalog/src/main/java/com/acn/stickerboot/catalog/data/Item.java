@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Data
@@ -26,7 +27,7 @@ public class Item {
 
     String description;
 
-    @NotEmpty
+    @NotNull(message = "basePrice cannot be empty")
     float basePrice;
 
     @OneToMany(orphanRemoval = true)

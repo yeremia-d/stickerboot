@@ -18,7 +18,7 @@ public class CatalogController {
     }
 
     @GetMapping
-    public Page<Item> list(@RequestParam(required = false) Pageable page) {
+    public Page<Item> list(Pageable page) {
         return catalogService.listItems(page);
     }
 
@@ -32,9 +32,9 @@ public class CatalogController {
         return catalogService.createItem(item);
     }
 
-    @PutMapping
-    public Item update(@RequestBody Item item) {
-        return catalogService.updateItem(item);
+    @PutMapping("/{id}")
+    public Item update(@PathVariable Long id, @RequestBody Item item) {
+        return catalogService.updateItemById(id, item);
     }
 
     @DeleteMapping("/{id}")

@@ -36,8 +36,16 @@ public class CatalogServiceImpl implements CatalogService {
     }
 
     @Override
-    public Item updateItem(Item item) {
-        return catalogRepository.save(item);
+    public Item updateItemById(Long id, Item item) {
+        return catalogRepository
+                .findById(id)
+                .map(itemToUpdate -> {
+                    itemToUpdate.setName(item.getName());
+                    itemToUpdate.setDescription(item.getDescription());
+                    itemToUpdate.setBasePrice(item.getBasePrice());
+                    return catalogRepository.save(itemToUpdate);
+                })
+                .orElseThrow(() -> new NoSuchElementException("Item with id " + id + " does not exist"));
     }
 
     @Override

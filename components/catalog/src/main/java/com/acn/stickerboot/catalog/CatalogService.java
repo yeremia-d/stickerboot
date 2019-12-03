@@ -12,7 +12,7 @@ public interface CatalogService {
 
     Item createItem(Item item);
 
-    Item updateItem(Item item);
+    Item updateItemById(Long id, Item item);
 
     void deleteById(Long id);
 }
