@@ -88,11 +88,11 @@ public class CatalogControllerTests {
 
     @Test
     public void update__test() {
-        when(catalogService.updateItem(testItem_1)).thenReturn(testItem_1);
+        when(catalogService.updateItemById(testItem_1.getId(), testItem_1)).thenReturn(testItem_1);
 
-        Item result = catalogController.update(testItem_1);
+        Item result = catalogController.update(testItem_1.getId(), testItem_1);
 
-        verify(catalogService, atLeastOnce()).updateItem(testItem_1);
+        verify(catalogService, atLeastOnce()).updateItemById(testItem_1.getId(), testItem_1);
         assertEquals(testItem_1, result);
     }
 

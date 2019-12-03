@@ -3,6 +3,7 @@ package com.acn.stickerboot.catalog.unitTests;
 import com.acn.stickerboot.catalog.CatalogRepository;
 import com.acn.stickerboot.catalog.CatalogServiceImpl;
 import com.acn.stickerboot.catalog.data.Item;
+import com.acn.stickerboot.catalog.exceptions.CatalogItemNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -17,7 +18,6 @@ import org.springframework.data.domain.Pageable;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -69,7 +69,7 @@ public class CatalogServiceImplTests {
     public void getItemById_NoElement__Test() {
         when(catalogRepository.findById(0L)).thenReturn(Optional.empty());
 
-        assertThrows(NoSuchElementException.class, () -> catalogService.getItemById(0L));
+        assertThrows(CatalogItemNotFoundException.class, () -> catalogService.getItemById(0L));
     }
 
     @Test
@@ -101,11 +101,12 @@ public class CatalogServiceImplTests {
     }
 
     @Test
-    @DisplayName("updateItem Test")
-    public void updateItem__Test() {
+    @DisplayName("updateItemById Test")
+    public void updateItemById__Test() {
         when(catalogRepository.save(testItem_1)).thenReturn(testItem_1);
+        when(catalogRepository.findById(testItem_1.getId())).thenReturn(Optional.of(testItem_1));
 
-        Item result = catalogService.updateItem(testItem_1);
+        Item result = catalogService.updateItemById(testItem_1.getId(), testItem_1);
 
         verify(catalogRepository, atLeastOnce()).save(testItem_1);
         assertEquals(testItem_1, result);
