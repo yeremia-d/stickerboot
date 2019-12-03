@@ -1,12 +1,11 @@
 package com.acn.stickerboot.catalog;
 
 import com.acn.stickerboot.catalog.data.Item;
+import com.acn.stickerboot.catalog.exceptions.CatalogItemNotFoundException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.NoSuchElementException;
 
 @Service
 @Transactional
@@ -22,7 +21,7 @@ public class CatalogServiceImpl implements CatalogService {
     public Item getItemById(Long id) {
         return catalogRepository
                 .findById(id)
-                .orElseThrow(() -> new NoSuchElementException("No Item with id " + id));
+                .orElseThrow(() -> new CatalogItemNotFoundException(id));
     }
 
     @Override
@@ -45,7 +44,7 @@ public class CatalogServiceImpl implements CatalogService {
                     itemToUpdate.setBasePrice(item.getBasePrice());
                     return catalogRepository.save(itemToUpdate);
                 })
-                .orElseThrow(() -> new NoSuchElementException("Item with id " + id + " does not exist"));
+                .orElseThrow(() -> new CatalogItemNotFoundException(id));
     }
 
     @Override
